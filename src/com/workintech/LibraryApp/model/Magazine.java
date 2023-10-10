@@ -19,7 +19,7 @@ public class Magazine extends LibraryItem{
         builder.append("Magazine Name: " + getName() + "\n");
         builder.append("Description: " + getDescription() + "\n");
         builder.append("Stock: " + getStock() + "\n");
-        builder.append("Category: " + category + "\n");
+        builder.append("Category: " + category.name() + "\n");
         builder.append("Publisher: " + publisher + "\n");
         builder.append("Available: " + (isAvailable() ? "Book is available" : "Book borrowed.") + "\n");
         return builder.toString();
