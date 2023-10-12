@@ -17,6 +17,10 @@ public class Author {
         return fullName;
     }
 
+    protected void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
     public Set<Book> getBooks() {
         return books;
     }

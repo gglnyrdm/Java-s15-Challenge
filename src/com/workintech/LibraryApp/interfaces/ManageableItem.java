@@ -9,5 +9,5 @@ public interface ManageableItem {
     void borrowItem(User user, LibraryItem item, Date dueDate);
     void returnItem(User user, LibraryItem item);
     boolean checkAvailability(LibraryItem item);
-    void addNewUser();
+
 }

@@ -21,7 +21,7 @@ public class Magazine extends LibraryItem {
     }
 
     @Override
-    public String displayInfo() {
+    public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Magazine ID: " + getId() + "\n");
         builder.append("Magazine Name: " + getName() + "\n");

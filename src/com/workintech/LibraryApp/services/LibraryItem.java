@@ -1,6 +1,7 @@
 package com.workintech.LibraryApp.services;
 
 public abstract class LibraryItem {
+    protected double ITEM_PRICE = 10.0;
     private int id;
     private String name;
     private String description;
@@ -55,5 +56,22 @@ public abstract class LibraryItem {
         this.stock = stock;
     }
 
-    public abstract String displayInfo();
+    protected void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public double calculateAmount(){
+        return ITEM_PRICE;
+    }
+
+    @Override
+    public String toString() {
+        return "LibraryItem{" +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", stock=" + stock +
+                ", available=" + available +
+                '}';
+    }
 }

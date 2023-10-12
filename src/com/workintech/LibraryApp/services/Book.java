@@ -12,6 +12,14 @@ public class Book extends LibraryItem {
         this.author = author;
     }
 
+    public BookCategory getCategory() {
+        return category;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
     protected void setCategory(BookCategory category) {
         this.category = category;
     }
@@ -21,7 +29,7 @@ public class Book extends LibraryItem {
     }
 
     @Override
-    public String displayInfo() {
+    public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Book ID: " + getId() + "\n");
         builder.append("Book Name: " + getName() + "\n");

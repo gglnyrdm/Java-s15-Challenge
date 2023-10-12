@@ -1,8 +1,11 @@
 package com.workintech.LibraryApp.services;
 
 import com.workintech.LibraryApp.employees.Staff;
+import com.workintech.LibraryApp.enums.BookCategory;
+import com.workintech.LibraryApp.enums.MagazineCategory;
 import com.workintech.LibraryApp.enums.Role;
 
+import java.util.Map;
 import java.util.Scanner;
 
 public class Admin extends Staff {
@@ -55,6 +58,39 @@ public class Admin extends Staff {
             }
         }else {
             System.out.println("Permission denied. You don't have sufficient privileges.");
+        }
+    }
+
+    private void updateItem(int itemId, String newName, String newDescription, int newStock, boolean newAvailability, BookCategory newBookCategory, MagazineCategory newMagazineCategory,String newAuthorName, String newPublisher){
+        if (library.getBooks().containsKey(itemId)) {
+            Map<Integer,Book> books = library.getBooks();
+
+            Book bookToUpdate = books.get(itemId);
+            bookToUpdate.setName(newName);
+            bookToUpdate.setDescription(newDescription);
+            bookToUpdate.setStock(newStock);
+            bookToUpdate.setAvailable(newAvailability);
+            bookToUpdate.setCategory(newBookCategory);
+
+            if (newAuthorName != null && !newAuthorName.trim().isEmpty()) {
+                Author author = bookToUpdate.getAuthor();
+                author.setFullName(newAuthorName);
+            }
+            System.out.println("Book updated: " + bookToUpdate);
+        } else if (library.getMagazines().containsKey(itemId)){
+            Map<Integer,Magazine> magazines = library.getMagazines();
+
+            Magazine magazineToUpdate = magazines.get(itemId);
+            magazineToUpdate.setName(newName);
+            magazineToUpdate.setDescription(newDescription);
+            magazineToUpdate.setStock(newStock);
+            magazineToUpdate.setAvailable(newAvailability);
+            magazineToUpdate.setCategory(newMagazineCategory);
+            magazineToUpdate.setPublisher(newPublisher);
+
+            System.out.println("Magazine updated: " +magazineToUpdate);
+        }else {
+            System.out.println("Item with ID not found.");
         }
     }
 
