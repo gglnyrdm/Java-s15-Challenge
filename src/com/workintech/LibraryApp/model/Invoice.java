@@ -1,6 +1,7 @@
 package com.workintech.LibraryApp.model;
 
 import com.workintech.LibraryApp.employees.Staff;
+import com.workintech.LibraryApp.services.LibraryItem;
 
 import java.time.LocalDate;
 

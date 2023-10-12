@@ -1,4 +1,4 @@
-package com.workintech.LibraryApp.model;
+package com.workintech.LibraryApp.services;
 
 public abstract class LibraryItem {
     private int id;
@@ -43,10 +43,17 @@ public abstract class LibraryItem {
         return available;
     }
 
-    public void setAvailable(boolean available) {
-        if (stock > 0){
-            this.available = available;
-        }
+    protected void setName(String name) {
+        this.name = name;
     }
+
+    protected void setDescription(String description) {
+        this.description = description;
+    }
+
+    protected void setStock(int stock) {
+        this.stock = stock;
+    }
+
     public abstract String displayInfo();
 }

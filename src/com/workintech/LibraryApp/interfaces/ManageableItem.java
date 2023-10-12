@@ -1,6 +1,6 @@
 package com.workintech.LibraryApp.interfaces;
 
-import com.workintech.LibraryApp.model.LibraryItem;
+import com.workintech.LibraryApp.services.LibraryItem;
 import com.workintech.LibraryApp.model.User;
 
 import java.util.Date;

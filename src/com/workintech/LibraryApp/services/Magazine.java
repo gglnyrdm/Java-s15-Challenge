@@ -1,14 +1,22 @@
-package com.workintech.LibraryApp.model;
+package com.workintech.LibraryApp.services;
 
 import com.workintech.LibraryApp.enums.MagazineCategory;
 
-public class Magazine extends LibraryItem{
+public class Magazine extends LibraryItem {
     private MagazineCategory category;
     private String publisher;
 
     public Magazine(int id, String name, String description, int stock, boolean available, MagazineCategory magazineCategory, String publisher) {
         super(id, name, description, stock, available);
         this.category = magazineCategory;
+        this.publisher = publisher;
+    }
+
+    protected void setCategory(MagazineCategory category) {
+        this.category = category;
+    }
+
+    protected void setPublisher(String publisher) {
         this.publisher = publisher;
     }
 

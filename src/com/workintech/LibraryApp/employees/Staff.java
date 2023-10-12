@@ -2,7 +2,7 @@ package com.workintech.LibraryApp.employees;
 
 import com.workintech.LibraryApp.enums.Role;
 import com.workintech.LibraryApp.interfaces.ManageableItem;
-import com.workintech.LibraryApp.model.LibraryItem;
+import com.workintech.LibraryApp.services.LibraryItem;
 import com.workintech.LibraryApp.model.User;
 
 import java.util.Date;
@@ -16,6 +16,10 @@ public class Staff implements ManageableItem {
         this.id = id;
         this.fullName = fullName;
         this.role = role;
+    }
+
+    public Role getRole() {
+        return role;
     }
 
     @Override

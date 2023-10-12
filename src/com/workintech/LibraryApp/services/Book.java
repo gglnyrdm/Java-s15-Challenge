@@ -1,14 +1,22 @@
-package com.workintech.LibraryApp.model;
+package com.workintech.LibraryApp.services;
 
 import com.workintech.LibraryApp.enums.BookCategory;
 
-public class Book extends LibraryItem{
+public class Book extends LibraryItem {
     private BookCategory category;
     private Author author;
 
     public Book(int id, String name, String description, int stock, boolean available, BookCategory category, Author author) {
         super(id, name, description, stock, available);
         this.category = category;
+        this.author = author;
+    }
+
+    protected void setCategory(BookCategory category) {
+        this.category = category;
+    }
+
+    protected void setAuthor(Author author) {
         this.author = author;
     }
 

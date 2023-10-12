@@ -1,5 +1,7 @@
 package com.workintech.LibraryApp.model;
 
+import com.workintech.LibraryApp.services.LibraryItem;
+
 public class User {
     private int id;
     private String fullName;
