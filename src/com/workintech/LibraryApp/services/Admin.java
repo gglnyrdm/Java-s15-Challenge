@@ -18,6 +18,9 @@ public class Admin extends Staff {
         super(id, fullName, role);
         this.library = library;
     }
+    public Admin(int id,String fullName,Role role){
+        super(id,fullName,role);
+    }
 
     private boolean checkRole(){
         return getRole() == Role.ADMIN;

@@ -8,7 +8,8 @@ import java.util.Date;
 
 
 public class Invoice {
-    private static int id;
+    private static int idCounter = 1;
+    private int id;
     private LibraryItem item;
     private User fullName;
     private Staff issuedBy;
@@ -26,36 +27,9 @@ public class Invoice {
         this.amount = amount;
     }
     public static int generateInvoiceId(){
-        return id++;
+        return idCounter++;
     }
 
-    public static int getId() {
-        return id;
-    }
-
-    public LibraryItem getItem() {
-        return item;
-    }
-
-    public User getFullName() {
-        return fullName;
-    }
-
-    public Staff getIssuedBy() {
-        return issuedBy;
-    }
-
-    public LocalDate getIssueDate() {
-        return issueDate;
-    }
-
-    public LocalDate getDueDate() {
-        return dueDate;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
     public double calculateAmount(){
         return 10.00;
     }
