@@ -1,5 +1,6 @@
 package com.workintech.LibraryApp.services;
 
+import com.workintech.LibraryApp.enums.ItemType;
 import com.workintech.LibraryApp.enums.MagazineCategory;
 
 public class Magazine extends LibraryItem {
@@ -7,9 +8,17 @@ public class Magazine extends LibraryItem {
     private String publisher;
 
     public Magazine(int id, String name, String description, int stock, boolean available, MagazineCategory magazineCategory, String publisher) {
-        super(id, name, description, stock, available);
+        super(id, name, description, stock, available, ItemType.MAGAZINE);
         this.category = magazineCategory;
         this.publisher = publisher;
+    }
+
+    public MagazineCategory getCategory() {
+        return category;
+    }
+
+    public String getPublisher() {
+        return publisher;
     }
 
     protected void setCategory(MagazineCategory category) {
